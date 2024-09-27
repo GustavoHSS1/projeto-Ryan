@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cores da paleta */
+
+:root {
+    --cor-primaria: #61ADC7; /* Azul claro */
+    --cor-secundaria: #5890BF; /* Azul intermediário */
+    --cor-terciaria: #3A54A1; /* Azul escuro */
+    --cor-quaternaria: #344F9E; /* Azul mais escuro */
+}
+
+/* Estilos do Header */
+
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-secundaria);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Navegação */
+nav {
+    background-color: var(--cor-secundaria);
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--cor-terciaria);
+}
+
+ /* Estilo da Main Section */
+main {
+    padding: 20px;
+}
+
+/* Estilos para layout lado a lado */
+.sobre-e-localizacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espaçamento entre a section e o aside */
+    margin-bottom: 40px; /* Espaço abaixo dessa seção */
+}
+
+#sobre-nos {
+    flex: 1;
+}
+
+/* Estilos do iframe para o mapa */
+aside iframe {
+    width: 100%; /* Ajusta a largura do mapa para o contêiner do aside */
+    height: 350px; /* Ajusta a altura conforme necessário */
+}
+
+h2 {
+    color: var(--cor-quaternaria);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Estilos da equipe */
+#equipe div img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 3px solid var(--cor-terciaria);
+}
+
+#equipe h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilos do footer */
+footer {
+    background-color: var(--cor-quaternaria);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Botão de link do mapa */
+#botao-mapa {
+    display: inline-block;
+    background-color: var(--cor-terciaria);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #equipe div img {
+        width: 150px;
+        height: 150px;
+    }
+}
