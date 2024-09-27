@@ -33,7 +33,7 @@
             <aside>
                 <h2>Onde nós ficamos localizados</h2>
                 <!-- Placeholder do mapa -->
-                <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.848715043106!2d-34.87861598553464!3d-7.121628171808906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace81f8e8d649b%3A0x297c81318d4171bb!2sRua%20Professora%20Maria%20Helena%20Silva%20Rocha%2C%20151%20-%20Jo%C3%A3o%20Pessoa%2C%20PB%2058078-440!5e0!3m2!1sen!2sbr!4v1605225206801!5m2!1sen!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <p><strong>Rua Professora Maria Helena Silva Rocha, 151, box 4, Funcionários, João Pessoa, PB - 58078-440</strong></p>
                 <a href="https://maps.google.com/maps?daddr=Rua%20Professora%20Maria%20Helena%20Silva%20Rocha,%20151,%20box%204,%20Funcion%C3%A1rios,%20Jo%C3%A3o%20Pessoa,%20PB%20-%2058078-440" target="_blank" id="botao-mapa">Ver no Mapa</a>
             </aside>
@@ -41,11 +41,18 @@
     
         <section id="equipe">
             <h2>Nossa Equipe</h2>
-            <div>
-                <img src="imagens/imagem1.jpg" alt="Barbeiro 1">
-                <img src="imagens/imagem2.jpg" alt="Barbeiro 2">
-                <img src="imagens/imagem3.jpg" alt="Barbeiro 3">
+            <div class="equipe-container">
+                <div class="equipe-item">
+                    <img src="imagens/imagem1.jpg" alt="Barbeiro 1" class="equipe-img" data-info="Este é o Barbeiro 1. Ele é especialista em cortes modernos.">
+                </div>
+                <div class="equipe-item">
+                    <img src="imagens/imagem2.jpg" alt="Barbeiro 2" class="equipe-img" data-info="Este é o Barbeiro 2. Ele tem mais de 10 anos de experiência.">
+                </div>
+                <div class="equipe-item">
+                    <img src="imagens/imagem3.jpg" alt="Barbeiro 3" class="equipe-img" data-info="Este é o Barbeiro 3. Ele é especialista em barbas e cuidados faciais.">
+                </div>
             </div>
+            <div id="info-barbeiro" class="info-barbeiro"></div>
         </section>
     
         <section id="duvidas">
@@ -60,5 +67,6 @@
     <footer>
         <p>Site desenvolvido para a Barbearia Elegance</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

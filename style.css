@@ -126,6 +126,46 @@ p {
     text-align: center; /* Centraliza o conteúdo */
 }
 
+.equipe-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.equipe-item {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.equipe-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Quando o mouse está sobre a imagem */
+.equipe-item:hover .equipe-img {
+    transform: scale(1.2); /* Aumenta a imagem */
+}
+
+/* Caixa de informações */
+#info-barbeiro {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    display: none; /* Esconde por padrão */
+}
+
+/* Informações visíveis */
+#info-barbeiro.show {
+    display: block;
+}
+
 #equipe div {
     display: flex;
     justify-content: center; /* Centraliza as imagens horizontalmente */
