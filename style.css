@@ -9,6 +9,16 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garantir que todos os elementos usem largura flexível */
+.container, .sobre-e-localizacao, main, header, nav, section, aside {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 /* Cores da paleta */
@@ -49,6 +59,24 @@ nav a {
     text-decoration: none;
 }
 
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
 nav ul li a:hover {
     color: var(--cor-terciaria);
 }
@@ -67,8 +95,8 @@ main {
     margin-bottom: 40px; /* Espaço abaixo dessa seção */
 }
 
-#sobre-nos {
-    flex: 1;
+#sobre-nos, aside {
+    padding: 20px;
 }
 
 /* Estilos do iframe para o mapa */
@@ -90,6 +118,28 @@ p {
 }
 
 /* Estilos da equipe */
+#equipe {
+    width: 100%; /* Ocupa toda a largura da tela */
+    margin: 0; /* Remove margens externas */
+    padding: 20px; /* Adiciona padding interno para espaçamento */
+    background-color: var(--cor-secundaria); /* Cor de fundo para destaque */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+#equipe div {
+    display: flex;
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    gap: 20px; /* Espaçamento entre as imagens */
+    flex-wrap: wrap;
+}
+
+#equipe img {
+    max-width: 200px; /* Limita o tamanho das imagens */
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Adiciona bordas arredondadas às imagens */
+}
+
 #equipe div img {
     width: 200px;
     height: 200px;
@@ -100,6 +150,37 @@ p {
 
 #equipe h2 {
     margin-bottom: 20px;
+    font-size: 2rem; /* Ajuste do tamanho do texto */
+}
+
+/* Estilos para a seção de dúvidas */
+#duvidas {
+    background-color: #f0f4fa; /* Cor de fundo suave */
+    padding: 40px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    max-width: 800px; /* Limita a largura máxima da seção */
+    margin: 50px auto; /* Centraliza a seção horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    text-align: center; /* Centraliza o texto */
+}
+
+#duvidas h2 {
+    font-size: 2rem; /* Aumenta o tamanho do título */
+    color: #3A54A1; /* Cor do título */
+    margin-bottom: 20px;
+}
+
+#duvidas h3 {
+    font-size: 1.5rem; /* Tamanho menor para subtítulo */
+    color: #344F9E; /* Cor do subtítulo */
+    margin-bottom: 15px;
+}
+
+#duvidas p {
+    font-size: 1.1rem; /* Aumenta o tamanho do texto */
+    color: #333; /* Cor do texto */
+    margin-bottom: 10px; /* Espaçamento entre os parágrafos */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
 }
 
 /* Estilos do footer */
@@ -126,19 +207,97 @@ footer p {
     border-radius: 5px;
 }
 
+#botao-mapa:hover {
+    background-color: var(--cor-secundaria);
+}
+
 /* Responsividade */
+/* Media Query para telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+
+    /* Alinhar navegação em coluna em dispositivos menores */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    .sobre-e-localizacao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    #equipe div img {
-        width: 150px;
-        height: 150px;
+    /* Imagens de equipe ajustadas para telas pequenas */
+    #equipe div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #equipe img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Ajustar seção sobre nós e aside para ocupar toda a largura */
+    #sobre-nos, aside {
+        width: 100%;
+    }
+
+    /* Centralizar mapa em telas menores */
+    aside iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ajuste de padding e espaçamento */
+    section, aside {
+        padding: 15px;
+    }
+
+    #duvidas {
+        padding: 20px;
+    }
+}
+
+/* Media Query para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+
+    /* Reduzindo tamanhos de texto */
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    p, a {
+        font-size: 1rem;
+    }
+
+    /* Imagens de equipe ajustadas para telas pequenas */
+    #equipe img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ajuste de espaçamento para telas menores */
+    #sobre-nos, aside {
+        padding: 10px;
+    }
+
+    #duvidas {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste de largura total para o iframe do mapa */
+    aside iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsividade para garantir que a seção se adapte bem em telas menores */
+@media (max-width: 768px) {
+    #duvidas {
+        padding: 20px;
     }
 }
