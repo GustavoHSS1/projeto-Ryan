@@ -18,3 +18,26 @@ equipeItems.forEach(item => {
         infoBarbeiro.classList.remove('show');
     });
 });
+
+// Seleciona todos os links de navegação
+const navLinks = document.querySelectorAll('nav a');
+
+// Adiciona o evento de clique a cada link
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Evita o comportamento padrão do link
+        e.preventDefault();
+
+        // Pega o ID da seção para onde o link aponta
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        // Rola suavemente para a posição da seção
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' // Ajusta a posição do elemento no topo
+            });
+        }
+    });
+});
